@@ -1,16 +1,34 @@
 package coffee.synyx.frontpage.plugin.api;
 
+import org.springframework.plugin.core.Plugin;
+
+
 /**
  * Plugin Interface for CoffeeNet Frontpage.
  *
  * <p>All CoffeeNet Frontpage plugins have to implement following interface for rendering a view for their plugin.</p>
  */
-public interface FrontpagePluginInterface {
+public interface FrontpagePluginInterface extends Plugin<FrontpagePluginQualifier> {
 
     /**
-     * This methods provides all html based information for the view of the plugin.
+     * This methods provides title of the view of the plugin.
      *
-     * @return  HTML-based Plugin View
+     * @return  title as String
      */
-    String render();
+    String title();
+
+
+    /**
+     * This methods provides all content information for the view of the plugin.
+     *
+     * @return  Plugin Content Information
+     */
+    String content();
+
+
+    @Override
+    default boolean supports(FrontpagePluginQualifier delimiter) {
+
+        return true;
+    }
 }

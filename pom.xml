@@ -23,6 +23,11 @@
         <tag>HEAD</tag>
     </scm>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-plugin-core.version>1.2.0.RELEASE</spring-plugin-core.version>
+    </properties>
+
     <distributionManagement>
         <repository>
             <id>releases.public.nexus.synyx.de</id>
@@ -34,10 +39,33 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <dependencies>
+        <!-- Plugin -->
+        <dependency>
+            <groupId>org.springframework.plugin</groupId>
+            <artifactId>spring-plugin-core</artifactId>
+            <version>${spring-plugin-core.version}</version>
+        </dependency>
+    </dependencies>
+
     <repositories>
         <repository>
             <id>releases.public.nexus.synyx.de</id>
             <url>http://nexus.synyx.de/content/repositories/public-releases</url>
         </repository>
     </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
