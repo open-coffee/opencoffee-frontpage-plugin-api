@@ -1,7 +1,9 @@
 # Changelog
 
-## 0.3.0-SNAPSHOT
+## 0.3.0
 
+* Add
+  * id
 
 ## 0.2.0
 
