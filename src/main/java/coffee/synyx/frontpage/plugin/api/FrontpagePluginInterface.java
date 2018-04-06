@@ -13,7 +13,7 @@ public interface FrontpagePluginInterface extends Plugin<FrontpagePluginQualifie
     /**
      * This methods provides title of the view of the plugin.
      *
-     * @return  title as String
+     * @return title as String
      */
     String title();
 
@@ -21,9 +21,17 @@ public interface FrontpagePluginInterface extends Plugin<FrontpagePluginQualifie
     /**
      * This methods provides all content information for the view of the plugin.
      *
-     * @return  Plugin Content Information
+     * @return Plugin Content Information
      */
     String content();
+
+
+    /**
+     * This methods provides a unique plugin id
+     *
+     * @return a unique plugin id
+     */
+    String id();
 
 
     @Override
