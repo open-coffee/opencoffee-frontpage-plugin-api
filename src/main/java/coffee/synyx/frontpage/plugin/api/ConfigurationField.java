@@ -12,9 +12,9 @@ public interface ConfigurationField {
     /**
      * The type of the input field. (e.g. 'number' or 'text')
      *
-     * @return the type
+     * @return the {@link ConfigurationFieldType}
      */
-    String getType();
+    ConfigurationFieldType getType();
 
     /**
      * @return the id
