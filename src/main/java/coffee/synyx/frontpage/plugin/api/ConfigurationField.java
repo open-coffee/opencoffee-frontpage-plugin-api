@@ -17,6 +17,14 @@ public interface ConfigurationField {
     ConfigurationFieldType getType();
 
     /**
+     *
+     * @return boolean whether the field is required or not
+     */
+    default boolean isRequired() {
+        return false;
+    }
+
+    /**
      * @return the id
      */
     String getId();
