@@ -1,7 +1,9 @@
 # Changelog
 
-## 0.4.0-SNAPSHOT
+## 0.4.0
 
+* Add
+  * possibility to create configured plugins
 
 ## 0.3.0
 
