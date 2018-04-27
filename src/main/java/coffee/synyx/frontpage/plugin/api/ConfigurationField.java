@@ -28,4 +28,56 @@ public interface ConfigurationField {
      * @return the id
      */
     String getId();
+
+    class Builder {
+
+        private String id;
+        private String label;
+        private ConfigurationFieldType type;
+        private boolean required;
+
+        public ConfigurationField.Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public ConfigurationField.Builder label(String label) {
+            this.label = label;
+            return this;
+        }
+
+        public ConfigurationField.Builder type(ConfigurationFieldType type) {
+            this.type = type;
+            return this;
+        }
+
+        public ConfigurationField.Builder required(boolean required) {
+            this.required = required;
+            return this;
+        }
+
+        public ConfigurationField build() {
+            return new ConfigurationField() {
+                @Override
+                public String getLabel() {
+                    return label;
+                }
+
+                @Override
+                public ConfigurationFieldType getType() {
+                    return type;
+                }
+
+                @Override
+                public String getId() {
+                    return id;
+                }
+
+                @Override
+                public boolean isRequired() {
+                    return required;
+                }
+            };
+        }
+    }
 }
