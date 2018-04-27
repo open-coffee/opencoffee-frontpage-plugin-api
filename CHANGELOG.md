@@ -1,7 +1,10 @@
 # Changelog
 
-## 0.5.0-SNAPSHOT
+## 0.5.0
 
+* Add
+ * ConfigurationFieldType for ConfigurationField
+ * Make ConfigurationDescription iterable
 
 ## 0.4.0
 

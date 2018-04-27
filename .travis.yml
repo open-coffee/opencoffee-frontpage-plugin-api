@@ -7,14 +7,13 @@ jdk:
 
 before_deploy:
   - mvn -DskipTests package
-  - export JAR_FILE=$(ls target/frontpage-plugin-api*.jar)
-  - echo "deploying ${JAR_FILE} to GitHub releases"
 
 deploy:
   - provider: releases
     api_key:
       secure: F5nXVfVGCZEogpA1m0369Mnsg91pLaPPTuGgwUJy8sozfYkXdrpIuNZM7NJ46fYRo3GCHppyGohpd8chg5djkGGGbWap4ApoHDT15ja1kapaEspb3roDF8wy2ILB4Qh1quE6DHcSyBtb/1Gizwt2blHS7wZAdZUzlghMdfjml22PaecptMyKppw1W+gUs7kfA/ypyLxKlRowVyyDlFTeiGAccdWsyCfUmnNQDPu3Bi9ztpeCohzjcH9SY1PkyGdSe+a93I9YqqJBDRk5AHHCb4mI1c3DPwwm2UEWqZqQwYI24P/RnqvD/mMkUELIGyptrrpPL0ToviPnE1+VkcWqME+Xs8fbVesh3oQMed06FFkvLZCTeZPtZrBepEfu/j5vNtLiMxO++gphY6fxKnWujeablEJLCEkgvt9lYi6jTS6FAMJyjPfSqMwRN44tyBwPb1cJOcg2sVINrz2ZrXoFVCmkfbbSdygubIO/uy6zX7jHBCX8NtX4fpNdQQp9SVhiinEgVUIfz8WRNpGRQSZEQbvg50K06kgzv1LyyQo+vOfnFG34V9tlR/1BVziSyXjNEBfyY9tREqhRDeTvJa5mLDnOl88EYPimkqRkgA2dq0cJfqLzdEKQf5Kxo5ETsjcwbAacUlY92oPdg/q1LwQW+ZwC6KlinPqlpwIKrEiHV5M=
-    file: "${JAR_FILE}"
+    file_glob: true
+    file: 'target/frontpage-plugin-api-*.jar'
     skip_cleanup: true
     on:
       tags: true
