@@ -5,8 +5,8 @@
 ## 0.5.0
 
 * Add
- * ConfigurationFieldType for ConfigurationField
- * Make ConfigurationDescription iterable
+  * ConfigurationFieldType for ConfigurationField
+  * Make ConfigurationDescription iterable
 
 ## 0.4.0
 
