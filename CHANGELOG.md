@@ -5,6 +5,7 @@
 * Add
   * Builder pattern for easier instantiation
     of `ConfigurationField`s
+  * ConfigurationFieldValidator
 
 ## 0.5.0
 
