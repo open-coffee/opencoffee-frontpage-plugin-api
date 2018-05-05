@@ -8,7 +8,7 @@ public interface ConfigurationFieldValidator {
     /**
      * checks whether this validator supports the given {@link ConfigurationField} or not
      *
-     * @param field
+     * @param field to check if supported by validator
      * @return
      *      <code>true</code> when this validator supports the given {@link ConfigurationField},
      *      <code>false</code> otherwise
