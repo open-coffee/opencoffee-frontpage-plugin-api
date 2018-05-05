@@ -14,7 +14,7 @@ public class ConfigurationDescriptionBuilderTest {
     }
 
     @Test
-    public void ensureBuilderCreatesCOnfigurationDescriptionWithConfigField() {
+    public void ensureBuilderCreatesConfigurationDescriptionWithConfigField() {
         final ConfigurationField configField = anyConfigField();
 
         ConfigurationDescription actual = new ConfigurationDescription.Builder()
