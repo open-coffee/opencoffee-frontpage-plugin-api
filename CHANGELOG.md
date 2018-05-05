@@ -2,6 +2,10 @@
 
 ## 0.6.0-SNAPSHOT
 
+* Add
+  * Builder pattern for easier instantiation
+    of `ConfigurationField`s
+
 ## 0.5.0
 
 * Add
