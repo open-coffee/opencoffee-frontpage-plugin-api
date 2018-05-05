@@ -14,7 +14,7 @@ public interface ConfigurationDescription {
     Set<ConfigurationField> getConfigurations();
 
     class Builder {
-        private final Set<ConfigurationField> fields = new HashSet();
+        private final Set<ConfigurationField> fields = new HashSet<>();
 
         public ConfigurationDescription.Builder withConfigurationField(ConfigurationField field) {
             this.fields.add(field);
