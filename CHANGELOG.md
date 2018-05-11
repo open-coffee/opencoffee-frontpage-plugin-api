@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.6.0-SNAPSHOT
+## 0.6.0
 
 * Add
   * Builder pattern for easier instantiation
