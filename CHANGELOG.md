@@ -2,6 +2,8 @@
 
 ## 0.7.0-SNAPSHOT
 
+* rename package to `rocks.coffeenet.frontpage.plugin.api`
+
 ## 0.6.0
 
 * Add

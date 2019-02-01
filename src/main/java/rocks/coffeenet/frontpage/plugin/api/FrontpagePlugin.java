@@ -1,4 +1,4 @@
-package coffee.synyx.frontpage.plugin.api;
+package rocks.coffeenet.frontpage.plugin.api;
 
 import org.springframework.plugin.core.Plugin;
 

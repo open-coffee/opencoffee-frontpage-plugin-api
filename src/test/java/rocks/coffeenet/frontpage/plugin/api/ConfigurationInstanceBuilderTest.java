@@ -1,6 +1,7 @@
-package coffee.synyx.frontpage.plugin.api;
+package rocks.coffeenet.frontpage.plugin.api;
 
 import org.junit.Test;
+import rocks.coffeenet.frontpage.plugin.api.ConfigurationInstance;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
