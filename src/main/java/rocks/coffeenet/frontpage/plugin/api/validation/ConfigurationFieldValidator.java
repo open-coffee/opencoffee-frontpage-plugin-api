@@ -1,6 +1,6 @@
-package coffee.synyx.frontpage.plugin.api.validation;
+package rocks.coffeenet.frontpage.plugin.api.validation;
 
-import coffee.synyx.frontpage.plugin.api.ConfigurationField;
+import rocks.coffeenet.frontpage.plugin.api.ConfigurationField;
 import org.springframework.validation.Errors;
 
 public interface ConfigurationFieldValidator {
