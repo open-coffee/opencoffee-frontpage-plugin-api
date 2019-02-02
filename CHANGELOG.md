@@ -1,5 +1,7 @@
 # Changelog
 
+## 0.8.0-SNAPSHOT
+
 ## 0.7.0
 
 * rename package to `rocks.coffeenet.frontpage.plugin.api`
