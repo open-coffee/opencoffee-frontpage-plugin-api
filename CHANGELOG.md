@@ -1,8 +1,10 @@
 # Changelog
 
-## 0.7.0-SNAPSHOT
+## 0.7.0
 
 * rename package to `rocks.coffeenet.frontpage.plugin.api`
+* Add
+  * LICENSE
 
 ## 0.6.0
 
