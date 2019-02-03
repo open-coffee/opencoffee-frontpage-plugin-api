@@ -4,10 +4,19 @@ language: java
 jdk:
   - oraclejdk8
 
+git:
+  depth: false
+
+addons:
+  sonarcloud:
+    organization: "coffeenet"
+    token:
+      secure: "YQvxJPXshF9NJDk3n57MTB8Q4qIZS4LgcuntR9aBrnOjbZiSYx5a3Qim8Ux8iHCOkCWOQv7hXAUEnKXdp+4z1VMYrjoVsfflHXgw5At8ayUVUEtsdyiP3IgFm6GKDdgFpUszZcgs2XJQp3GVUaLY+PzFkzd7mtswRqCqkU4AkYBD5IFoNH+gLvrmh8V2T7kGsgT0ljm2/Rjbq4vJ6hEcncOIkcIgtSShDcIo5Aoyksfen98s2A1omuqqFwYKldeN9hHlGlMLB7HV5hjeI0BP1xbnen64k3qDn7EyeEDBpTA/iB2VEhVvPaOwJZ/Zskg5sydR775h+xxpuVI89Z3VCpN+rHAiohWqRjThejh/pv/C3XZLyhnIAVwFLFXtAdbO7pcuxtY8+BQRfb2dRHeiM/C+hCTRpDW0t4rkvZBHKXbJf0ai8+nkT1pL0r9B+xxhP1ENBq3I3LD0Zyt7uIVYgi/LF5lK9KjUr5mDltW6SxTmlsP5nFoad6g3R6vylDp4YFJJhgKKEBIxpTnCYeXdIkUCW4MBVD73ZrVUXlRNw94ntJLn6kJoRcud9OEuNpfWW4vk0GLFdPsoX4cdE/TSfXpvlXv7ZnQc25HEmuGzWsDPLmYCx00m9I6rmsFUyUx/A3AegRC9E/DrO7fap0ynLjOxXd+G7t8bxGtpBwoy7GE="
+
 before_install:
   - sudo apt-get install -y markdown
 
-script: ./mvnw clean test
+script: ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent test sonar:sonar
 
 before_deploy:
   - export RELEASE_NOTES=$(awk -v start=1 '/^#{2}[[:space:]].*$/{n++;next};n==start;n==start+1{exit}' CHANGELOG.md | markdown | awk '{printf "%s",$0} END {print ""}')
