@@ -13,17 +13,18 @@ deploy:
     api_key:
       secure: F5nXVfVGCZEogpA1m0369Mnsg91pLaPPTuGgwUJy8sozfYkXdrpIuNZM7NJ46fYRo3GCHppyGohpd8chg5djkGGGbWap4ApoHDT15ja1kapaEspb3roDF8wy2ILB4Qh1quE6DHcSyBtb/1Gizwt2blHS7wZAdZUzlghMdfjml22PaecptMyKppw1W+gUs7kfA/ypyLxKlRowVyyDlFTeiGAccdWsyCfUmnNQDPu3Bi9ztpeCohzjcH9SY1PkyGdSe+a93I9YqqJBDRk5AHHCb4mI1c3DPwwm2UEWqZqQwYI24P/RnqvD/mMkUELIGyptrrpPL0ToviPnE1+VkcWqME+Xs8fbVesh3oQMed06FFkvLZCTeZPtZrBepEfu/j5vNtLiMxO++gphY6fxKnWujeablEJLCEkgvt9lYi6jTS6FAMJyjPfSqMwRN44tyBwPb1cJOcg2sVINrz2ZrXoFVCmkfbbSdygubIO/uy6zX7jHBCX8NtX4fpNdQQp9SVhiinEgVUIfz8WRNpGRQSZEQbvg50K06kgzv1LyyQo+vOfnFG34V9tlR/1BVziSyXjNEBfyY9tREqhRDeTvJa5mLDnOl88EYPimkqRkgA2dq0cJfqLzdEKQf5Kxo5ETsjcwbAacUlY92oPdg/q1LwQW+ZwC6KlinPqlpwIKrEiHV5M=
     file_glob: true
-    file: 'target/frontpage-plugin-api-*.jar'
     skip_cleanup: true
     on:
       tags: true
       repo: coffeenet/coffeenet-frontpage-plugin-api
+
   - provider: script
     script: echo "<settings><servers><server><id>snapshots.public.nexus.synyx.de</id><username>$NEXUS_USERNAME</username><password>$NEXUS_PASS</password></server></servers></settings>" > ~/settings.xml; ./mvnw deploy --settings ~/settings.xml -DskipTests
     skip_cleanup: true
     on:
       branch: master
       repo: coffeenet/coffeenet-frontpage-plugin-api
+
   - provider: script
     script: echo "<settings><servers><server><id>releases.public.nexus.synyx.de</id><username>$NEXUS_USERNAME</username><password>$NEXUS_PASS</password></server></servers></settings>" > ~/settings.xml; ./mvnw deploy --settings ~/settings.xml -DskipTests
     skip_cleanup: true
