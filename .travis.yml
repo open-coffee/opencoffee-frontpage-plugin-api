@@ -19,13 +19,6 @@ deploy:
       repo: coffeenet/coffeenet-frontpage-plugin-api
 
   - provider: script
-    script: echo "<settings><servers><server><id>snapshots.public.nexus.synyx.de</id><username>$NEXUS_USERNAME</username><password>$NEXUS_PASS</password></server></servers></settings>" > ~/settings.xml; ./mvnw deploy --settings ~/settings.xml -DskipTests
-    skip_cleanup: true
-    on:
-      branch: master
-      repo: coffeenet/coffeenet-frontpage-plugin-api
-
-  - provider: script
     script: echo "<settings><servers><server><id>releases.public.nexus.synyx.de</id><username>$NEXUS_USERNAME</username><password>$NEXUS_PASS</password></server></servers></settings>" > ~/settings.xml; ./mvnw deploy --settings ~/settings.xml -DskipTests
     skip_cleanup: true
     on:
