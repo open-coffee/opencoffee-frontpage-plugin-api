@@ -6,7 +6,7 @@ jdk:
   - oraclejdk8
 
 before_deploy:
-  - mvn -DskipTests package
+  - ./mvnw -DskipTests package
 
 deploy:
   - provider: releases
@@ -19,13 +19,13 @@ deploy:
       tags: true
       repo: coffeenet/coffeenet-frontpage-plugin-api
   - provider: script
-    script: echo "<settings><servers><server><id>snapshots.public.nexus.synyx.de</id><username>$NEXUS_USERNAME</username><password>$NEXUS_PASS</password></server></servers></settings>" > ~/settings.xml; mvn deploy --settings ~/settings.xml -DskipTests
+    script: echo "<settings><servers><server><id>snapshots.public.nexus.synyx.de</id><username>$NEXUS_USERNAME</username><password>$NEXUS_PASS</password></server></servers></settings>" > ~/settings.xml; ./mvnw deploy --settings ~/settings.xml -DskipTests
     skip_cleanup: true
     on:
       branch: master
       repo: coffeenet/coffeenet-frontpage-plugin-api
   - provider: script
-    script: echo "<settings><servers><server><id>releases.public.nexus.synyx.de</id><username>$NEXUS_USERNAME</username><password>$NEXUS_PASS</password></server></servers></settings>" > ~/settings.xml; mvn deploy --settings ~/settings.xml -DskipTests
+    script: echo "<settings><servers><server><id>releases.public.nexus.synyx.de</id><username>$NEXUS_USERNAME</username><password>$NEXUS_PASS</password></server></servers></settings>" > ~/settings.xml; ./mvnw deploy --settings ~/settings.xml -DskipTests
     skip_cleanup: true
     on:
       tags: true
